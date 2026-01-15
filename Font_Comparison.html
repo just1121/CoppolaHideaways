@@ -48,10 +48,14 @@
         }
         
         .panel-header {
-            padding: 20px;
+            padding: 10px 15px;
             text-align: center;
             border-bottom: 1px solid #ddd;
             background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
         
         .panel.universal .panel-header {
@@ -60,23 +64,26 @@
         }
         
         .panel-number {
-            font-size: 72px;
+            font-size: 36px;
             font-weight: 300;
             color: #333;
             line-height: 1;
-            margin-bottom: 10px;
         }
         
         .panel-header h2 {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
         
         .panel-header p {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
+        }
+        
+        .panel-info {
+            text-align: left;
         }
         
         .iframe-container {
@@ -157,8 +164,7 @@
         <div class="panel">
             <div class="panel-header">
                 <div class="panel-number">1</div>
-                <h2>Google Fonts</h2>
-                <p>Meie Script + IBM Plex Mono</p>
+                <div class="panel-info"><h2>Google Fonts</h2><p>Meie Script + IBM Plex Mono</p></div>
             </div>
             <div class="iframe-container">
                 <iframe src="LL_Confirm_Email_Embedded.html"></iframe>
@@ -168,8 +174,7 @@
         <div class="panel">
             <div class="panel-header">
                 <div class="panel-number">1a</div>
-                <h2>Fallback Fonts</h2>
-                <p>Cursive + Courier New</p>
+                <div class="panel-info"><h2>Fallback Fonts</h2><p>Cursive + Courier New</p></div>
             </div>
             <div class="iframe-container shorter">
                 <iframe src="LL_Confirm_Email_Fallback_Test.html"></iframe>
@@ -183,8 +188,7 @@
         <div class="panel universal">
             <div class="panel-header">
                 <div class="panel-number">2</div>
-                <h2>Universal Fonts</h2>
-                <p>Helvetica 22px + Courier New 14px</p>
+                <div class="panel-info"><h2>Universal Fonts</h2><p>Helvetica 22px + Courier New 14px</p></div>
             </div>
             <div class="iframe-container">
                 <iframe src="LL_Confirm_Email_Universal.html"></iframe>

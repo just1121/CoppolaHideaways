@@ -31,6 +31,7 @@
             gap: 20px;
             max-width: 1800px;
             margin: 0 auto;
+            align-items: flex-start;
         }
         
         .panel {
@@ -79,8 +80,12 @@
         }
         
         .iframe-container {
-            height: 600px;
+            height: 850px;
             overflow: auto;
+        }
+        
+        .iframe-container.shorter {
+            height: 550px;
         }
         
         .panel.universal .iframe-container {
@@ -93,67 +98,44 @@
             border: none;
         }
         
-        .summary-container {
-            max-width: 1800px;
-            margin: 30px auto 0;
-            display: flex;
-            gap: 20px;
+        .fallback-link {
+            padding: 15px 20px;
+            background: #fafafa;
+            border-top: 1px solid #ddd;
+            text-align: center;
         }
         
-        .summary-card {
-            flex: 1;
+        .fallback-link a {
+            display: inline-block;
+            padding: 10px 20px;
             background: #fff;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-        }
-        
-        .summary-card.universal {
-            background: #f0f0f0;
-            border-color: #ccc;
-        }
-        
-        .summary-card h3 {
-            font-size: 36px;
-            font-weight: 300;
+            border-radius: 6px;
             color: #333;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .summary-card.universal h3 {
-            border-bottom-color: #ddd;
-        }
-        
-        .summary-row {
-            display: flex;
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
+            text-decoration: none;
             font-size: 13px;
+            transition: background 0.2s;
         }
         
-        .summary-card.universal .summary-row {
-            border-bottom-color: #ddd;
+        .fallback-link a:hover {
+            background: #f0f0f0;
         }
         
-        .summary-row:last-child {
-            border-bottom: none;
-        }
-        
-        .summary-label {
-            width: 100px;
+        .fallback-link span {
+            display: block;
+            font-size: 11px;
             color: #888;
-            flex-shrink: 0;
-        }
-        
-        .summary-value {
-            color: #333;
+            margin-top: 8px;
         }
         
         @media (max-width: 1200px) {
-            .container, .summary-container {
+            .container {
                 flex-direction: column;
+            }
+            
+            .iframe-container,
+            .iframe-container.shorter {
+                height: 600px;
             }
         }
     </style>
@@ -179,8 +161,12 @@
                 <h2>Fallback Fonts</h2>
                 <p>Cursive + Courier New</p>
             </div>
-            <div class="iframe-container">
+            <div class="iframe-container shorter">
                 <iframe src="LL_Confirm_Email_Fallback_Test.html"></iframe>
+            </div>
+            <div class="fallback-link">
+                <a href="Cursive_Fallbacks.html?v=2" target="_blank">View Cursive Fallbacks by Device →</a>
+                <span>See what 85%, 15%, and &lt;1% of users see</span>
             </div>
         </div>
         
@@ -192,80 +178,6 @@
             </div>
             <div class="iframe-container">
                 <iframe src="LL_Confirm_Email_Universal.html"></iframe>
-            </div>
-        </div>
-    </div>
-    
-    <div class="summary-container">
-        <div class="summary-card">
-            <h3>1</h3>
-            <div class="summary-row">
-                <span class="summary-label">Headlines:</span>
-                <span class="summary-value">Meie Script (elegant script from Google Fonts)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Body:</span>
-                <span class="summary-value">IBM Plex Mono (modern monospace from Google Fonts)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Requires:</span>
-                <span class="summary-value">@import to load fonts from Google</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Works in:</span>
-                <span class="summary-value">Gmail, Apple Mail, iOS Mail, webmail clients (~85%)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Blocked by:</span>
-                <span class="summary-value">Outlook desktop (~15%) — shows 1a instead</span>
-            </div>
-        </div>
-        
-        <div class="summary-card">
-            <h3>1a</h3>
-            <div class="summary-row">
-                <span class="summary-label">Headlines:</span>
-                <span class="summary-value">System "cursive" (varies by device)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Body:</span>
-                <span class="summary-value">Courier New (universal monospace)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Requires:</span>
-                <span class="summary-value">Nothing — uses pre-installed system fonts</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Purpose:</span>
-                <span class="summary-value">Automatic fallback for Option 1 when blocked</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Who sees:</span>
-                <span class="summary-value">~15% of users (Outlook desktop on Windows)</span>
-            </div>
-        </div>
-        
-        <div class="summary-card universal">
-            <h3>2</h3>
-            <div class="summary-row">
-                <span class="summary-label">Headlines:</span>
-                <span class="summary-value">Helvetica / Arial, 22px (clean sans-serif)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Body:</span>
-                <span class="summary-value">Courier New, 14px (universal monospace)</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Requires:</span>
-                <span class="summary-value">Nothing — 100% pre-installed fonts</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Works in:</span>
-                <span class="summary-value">EVERYTHING — guaranteed on all devices</span>
-            </div>
-            <div class="summary-row">
-                <span class="summary-label">Best for:</span>
-                <span class="summary-value">Maximum compatibility, identical everywhere</span>
             </div>
         </div>
     </div>

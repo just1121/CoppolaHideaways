@@ -13,24 +13,16 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: #f5f5f5;
             min-height: 100vh;
             padding: 30px;
         }
         
         h1 {
             text-align: center;
-            color: #fff;
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
+            color: #333;
+            font-size: 24px;
+            font-weight: 400;
             margin-bottom: 30px;
         }
         
@@ -44,60 +36,40 @@
         .panel {
             flex: 1;
             background: #fff;
-            border-radius: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
         
         .panel-header {
-            padding: 18px 15px;
+            padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ddd;
+            background: #fafafa;
         }
         
-        .panel-header.google-fonts {
-            background: linear-gradient(135deg, #4285f4, #34a853);
-        }
-        
-        .panel-header.fallback {
-            background: linear-gradient(135deg, #757575, #424242);
-        }
-        
-        .panel-header.universal {
-            background: linear-gradient(135deg, #e65100, #f57c00);
+        .panel-number {
+            font-size: 72px;
+            font-weight: 300;
+            color: #333;
+            line-height: 1;
+            margin-bottom: 10px;
         }
         
         .panel-header h2 {
-            color: #fff;
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 6px;
+            color: #333;
+            margin-bottom: 5px;
         }
         
         .panel-header p {
-            color: rgba(255,255,255,0.9);
             font-size: 12px;
-        }
-        
-        .font-list {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .font-tag {
-            background: rgba(255,255,255,0.2);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 10px;
-            color: #fff;
-            font-family: monospace;
+            color: #666;
         }
         
         .iframe-container {
-            height: 650px;
+            height: 600px;
             overflow: auto;
         }
         
@@ -107,78 +79,67 @@
             border: none;
         }
         
-        .legend {
+        .summary-container {
             max-width: 1800px;
             margin: 30px auto 0;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 25px;
-            color: #fff;
-        }
-        
-        .legend h3 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .legend-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
             gap: 20px;
         }
         
-        .legend-card {
-            background: rgba(255,255,255,0.1);
+        .summary-card {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
         }
         
-        .legend-card h4 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+        .summary-card h3 {
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
         
-        .legend-card.google h4 { color: #4ade80; }
-        .legend-card.fallback h4 { color: #a1a1aa; }
-        .legend-card.universal h4 { color: #fb923c; }
-        
-        .legend-item {
-            font-size: 12px;
-            margin-bottom: 6px;
-            opacity: 0.9;
+        .summary-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
         }
         
-        .legend-item strong {
-            color: #fff;
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-label {
+            width: 100px;
+            color: #888;
+            flex-shrink: 0;
+        }
+        
+        .summary-value {
+            color: #333;
         }
         
         @media (max-width: 1200px) {
-            .container {
+            .container, .summary-container {
                 flex-direction: column;
-            }
-            
-            .legend-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <h1>LA LANCHA EMAIL - FONT COMPARISON</h1>
-    <p class="subtitle">Compare all three font options side by side</p>
+    <h1>LA LANCHA EMAIL — FONT COMPARISON</h1>
     
     <div class="container">
         <div class="panel">
-            <div class="panel-header google-fonts">
+            <div class="panel-header">
+                <div class="panel-number">1</div>
                 <h2>Google Fonts</h2>
-                <p>Brand look - requires @import</p>
-                <div class="font-list">
-                    <span class="font-tag">Meie Script</span>
-                    <span class="font-tag">IBM Plex Mono</span>
-                </div>
+                <p>Meie Script + IBM Plex Mono</p>
             </div>
             <div class="iframe-container">
                 <iframe src="LL_Confirm_Email_Embedded.html"></iframe>
@@ -186,60 +147,98 @@
         </div>
         
         <div class="panel">
-            <div class="panel-header universal">
-                <h2>Universal Fonts</h2>
-                <p>100% guaranteed to work everywhere</p>
-                <div class="font-list">
-                    <span class="font-tag">Helvetica/Arial 22px</span>
-                    <span class="font-tag">Courier New 16px</span>
-                </div>
-            </div>
-            <div class="iframe-container">
-                <iframe src="LL_Confirm_Email_Universal.html"></iframe>
-            </div>
-        </div>
-        
-        <div class="panel">
-            <div class="panel-header fallback">
-                <h2>Fallback Test</h2>
-                <p>What Google Fonts version shows if blocked</p>
-                <div class="font-list">
-                    <span class="font-tag">cursive</span>
-                    <span class="font-tag">Courier New</span>
-                </div>
+            <div class="panel-header">
+                <div class="panel-number">2</div>
+                <h2>Fallback Fonts</h2>
+                <p>Cursive + Courier New</p>
             </div>
             <div class="iframe-container">
                 <iframe src="LL_Confirm_Email_Fallback_Test.html"></iframe>
             </div>
         </div>
+        
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-number">3</div>
+                <h2>Universal Fonts</h2>
+                <p>Helvetica + Courier New</p>
+            </div>
+            <div class="iframe-container">
+                <iframe src="LL_Confirm_Email_Universal.html"></iframe>
+            </div>
+        </div>
     </div>
     
-    <div class="legend">
-        <h3>Font Options Summary</h3>
-        <div class="legend-grid">
-            <div class="legend-card google">
-                <h4>Option 1: Google Fonts</h4>
-                <div class="legend-item"><strong>Headlines:</strong> Meie Script (elegant script)</div>
-                <div class="legend-item"><strong>Body:</strong> IBM Plex Mono (modern mono)</div>
-                <div class="legend-item"><strong>Loads via:</strong> @import from Google</div>
-                <div class="legend-item"><strong>Works in:</strong> Gmail, Apple Mail, iOS, webmail</div>
-                <div class="legend-item"><strong>Blocked by:</strong> Outlook desktop</div>
+    <div class="summary-container">
+        <div class="summary-card">
+            <h3>1</h3>
+            <div class="summary-row">
+                <span class="summary-label">Headlines:</span>
+                <span class="summary-value">Meie Script (elegant script from Google Fonts)</span>
             </div>
-            <div class="legend-card universal">
-                <h4>Option 2: Universal (NEW)</h4>
-                <div class="legend-item"><strong>Headlines:</strong> Helvetica/Arial 22px</div>
-                <div class="legend-item"><strong>Body:</strong> Courier New 16px</div>
-                <div class="legend-item"><strong>Loads via:</strong> Nothing - pre-installed</div>
-                <div class="legend-item"><strong>Works in:</strong> EVERYTHING, 100%</div>
-                <div class="legend-item"><strong>Blocked by:</strong> Nothing!</div>
+            <div class="summary-row">
+                <span class="summary-label">Body:</span>
+                <span class="summary-value">IBM Plex Mono (modern monospace from Google Fonts)</span>
             </div>
-            <div class="legend-card fallback">
-                <h4>Option 3: Fallback Preview</h4>
-                <div class="legend-item"><strong>Headlines:</strong> System cursive (varies)</div>
-                <div class="legend-item"><strong>Body:</strong> Courier New</div>
-                <div class="legend-item"><strong>Purpose:</strong> Shows worst-case for Option 1</div>
-                <div class="legend-item"><strong>When seen:</strong> Outlook desktop users</div>
-                <div class="legend-item"><strong>Note:</strong> Still looks professional!</div>
+            <div class="summary-row">
+                <span class="summary-label">Requires:</span>
+                <span class="summary-value">@import to load fonts from Google</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Works in:</span>
+                <span class="summary-value">Gmail, Apple Mail, iOS Mail, webmail clients</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Blocked by:</span>
+                <span class="summary-value">Outlook desktop (will show Option 2 instead)</span>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <h3>2</h3>
+            <div class="summary-row">
+                <span class="summary-label">Headlines:</span>
+                <span class="summary-value">System "cursive" (varies by device)</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Body:</span>
+                <span class="summary-value">Courier New (universal monospace)</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Requires:</span>
+                <span class="summary-value">Nothing - uses pre-installed system fonts</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Purpose:</span>
+                <span class="summary-value">Shows what Option 1 looks like when @import blocked</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Note:</span>
+                <span class="summary-value">This is the automatic fallback for Option 1</span>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <h3>3</h3>
+            <div class="summary-row">
+                <span class="summary-label">Headlines:</span>
+                <span class="summary-value">Helvetica / Arial, 22px (clean sans-serif)</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Body:</span>
+                <span class="summary-value">Courier New, 16px (universal monospace)</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Requires:</span>
+                <span class="summary-value">Nothing - 100% pre-installed fonts</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Works in:</span>
+                <span class="summary-value">EVERYTHING - guaranteed on all devices</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Best for:</span>
+                <span class="summary-value">Maximum compatibility, no surprises</span>
             </div>
         </div>
     </div>

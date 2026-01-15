@@ -41,11 +41,21 @@
             overflow: hidden;
         }
         
+        .panel.universal {
+            background: #f0f0f0;
+            border-color: #ccc;
+        }
+        
         .panel-header {
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
             background: #fafafa;
+        }
+        
+        .panel.universal .panel-header {
+            background: #e8e8e8;
+            border-bottom-color: #ccc;
         }
         
         .panel-number {
@@ -73,6 +83,10 @@
             overflow: auto;
         }
         
+        .panel.universal .iframe-container {
+            background: #f0f0f0;
+        }
+        
         iframe {
             width: 100%;
             height: 100%;
@@ -94,6 +108,11 @@
             padding: 20px;
         }
         
+        .summary-card.universal {
+            background: #f0f0f0;
+            border-color: #ccc;
+        }
+        
         .summary-card h3 {
             font-size: 36px;
             font-weight: 300;
@@ -103,11 +122,19 @@
             border-bottom: 1px solid #eee;
         }
         
+        .summary-card.universal h3 {
+            border-bottom-color: #ddd;
+        }
+        
         .summary-row {
             display: flex;
             padding: 8px 0;
             border-bottom: 1px solid #f0f0f0;
             font-size: 13px;
+        }
+        
+        .summary-card.universal .summary-row {
+            border-bottom-color: #ddd;
         }
         
         .summary-row:last-child {
@@ -148,7 +175,7 @@
         
         <div class="panel">
             <div class="panel-header">
-                <div class="panel-number">2</div>
+                <div class="panel-number">1a</div>
                 <h2>Fallback Fonts</h2>
                 <p>Cursive + Courier New</p>
             </div>
@@ -157,9 +184,9 @@
             </div>
         </div>
         
-        <div class="panel">
+        <div class="panel universal">
             <div class="panel-header">
-                <div class="panel-number">3</div>
+                <div class="panel-number">2</div>
                 <h2>Universal Fonts</h2>
                 <p>Helvetica 22px + Courier New 14px</p>
             </div>
@@ -186,16 +213,16 @@
             </div>
             <div class="summary-row">
                 <span class="summary-label">Works in:</span>
-                <span class="summary-value">Gmail, Apple Mail, iOS Mail, webmail clients</span>
+                <span class="summary-value">Gmail, Apple Mail, iOS Mail, webmail clients (~85%)</span>
             </div>
             <div class="summary-row">
                 <span class="summary-label">Blocked by:</span>
-                <span class="summary-value">Outlook desktop (will show Option 2 instead)</span>
+                <span class="summary-value">Outlook desktop (~15%) — shows 1a instead</span>
             </div>
         </div>
         
         <div class="summary-card">
-            <h3>2</h3>
+            <h3>1a</h3>
             <div class="summary-row">
                 <span class="summary-label">Headlines:</span>
                 <span class="summary-value">System "cursive" (varies by device)</span>
@@ -206,20 +233,20 @@
             </div>
             <div class="summary-row">
                 <span class="summary-label">Requires:</span>
-                <span class="summary-value">Nothing - uses pre-installed system fonts</span>
+                <span class="summary-value">Nothing — uses pre-installed system fonts</span>
             </div>
             <div class="summary-row">
                 <span class="summary-label">Purpose:</span>
-                <span class="summary-value">Shows what Option 1 looks like when @import blocked</span>
+                <span class="summary-value">Automatic fallback for Option 1 when blocked</span>
             </div>
             <div class="summary-row">
-                <span class="summary-label">Note:</span>
-                <span class="summary-value">This is the automatic fallback for Option 1</span>
+                <span class="summary-label">Who sees:</span>
+                <span class="summary-value">~15% of users (Outlook desktop on Windows)</span>
             </div>
         </div>
         
-        <div class="summary-card">
-            <h3>3</h3>
+        <div class="summary-card universal">
+            <h3>2</h3>
             <div class="summary-row">
                 <span class="summary-label">Headlines:</span>
                 <span class="summary-value">Helvetica / Arial, 22px (clean sans-serif)</span>
@@ -230,15 +257,15 @@
             </div>
             <div class="summary-row">
                 <span class="summary-label">Requires:</span>
-                <span class="summary-value">Nothing - 100% pre-installed fonts</span>
+                <span class="summary-value">Nothing — 100% pre-installed fonts</span>
             </div>
             <div class="summary-row">
                 <span class="summary-label">Works in:</span>
-                <span class="summary-value">EVERYTHING - guaranteed on all devices</span>
+                <span class="summary-value">EVERYTHING — guaranteed on all devices</span>
             </div>
             <div class="summary-row">
                 <span class="summary-label">Best for:</span>
-                <span class="summary-value">Maximum compatibility, no surprises</span>
+                <span class="summary-value">Maximum compatibility, identical everywhere</span>
             </div>
         </div>
     </div>

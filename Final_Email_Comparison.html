@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Lancha Final Email Comparison</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    
+    .subtitle {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 14px;
+      color: #888888;
+    }
+    
+    .comparison-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .email-panel {
+      flex: 1;
+      min-width: 320px;
+      max-width: 450px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .panel-header {
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    
+    .panel-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: #05300f;
+      background: #f6f4ef;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    
+    .panel-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+    
+    .panel-desc {
+      font-size: 12px;
+      color: #888888;
+      line-height: 1.4;
+    }
+    
+    .email-frame {
+      width: 100%;
+      height: 700px;
+      border: none;
+      background: #ffffff;
+    }
+    
+    .notes-section {
+      max-width: 1400px;
+      margin: 30px auto 0 auto;
+      padding: 20px;
+      background: #2a2a2a;
+      border-radius: 8px;
+    }
+    
+    .notes-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+    
+    .notes-list {
+      list-style: none;
+      font-size: 13px;
+      color: #cccccc;
+      line-height: 1.8;
+    }
+    
+    .notes-list li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .notes-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #05300f;
+    }
+    
+    .highlight {
+      color: #9A6123;
+      font-weight: 500;
+    }
+    
+    .file-name {
+      font-family: 'Courier New', monospace;
+      background: #3a3a3a;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>La Lancha — Final Email Templates</h1>
+  <p class="subtitle">Universal Fonts (Helvetica 20px / Courier New 14px) • All Images Embedded • Ready for RDP</p>
+  
+  <div class="comparison-container">
+    
+    <!-- Panel 1: Standard -->
+    <div class="email-panel">
+      <div class="panel-header">
+        <div class="panel-number">1</div>
+        <div class="panel-title">Standard</div>
+        <div class="panel-desc">Direct bookings with full deposit & cancellation policies</div>
+      </div>
+      <iframe class="email-frame" src="LL_Confirm_Embedded copy.html"></iframe>
+    </div>
+    
+    <!-- Panel 2: OTA -->
+    <div class="email-panel">
+      <div class="panel-header">
+        <div class="panel-number">2</div>
+        <div class="panel-title">OTA</div>
+        <div class="panel-desc">Third-party bookings (Booking.com, Expedia) — simplified policies</div>
+      </div>
+      <iframe class="email-frame" src="LL_Confirm_OTA_Embedded.html"></iframe>
+    </div>
+    
+    <!-- Panel 3: Wholesale -->
+    <div class="email-panel">
+      <div class="panel-header">
+        <div class="panel-number">3</div>
+        <div class="panel-title">Wholesale</div>
+        <div class="panel-desc">Wholesale/trade bookings with package note + full policies</div>
+      </div>
+      <iframe class="email-frame" src="LL_Confirm_WH_Embedded.html"></iframe>
+    </div>
+    
+  </div>
+  
+  <div class="notes-section">
+    <div class="notes-title">Quick Reference</div>
+    <ul class="notes-list">
+      <li><span class="highlight">All three emails</span> use Universal fonts (Helvetica headlines, Courier New body) — renders identically on every device</li>
+      <li><span class="highlight">Images are fully embedded</span> as base64 — no external hosting required</li>
+      <li><span class="highlight">RDP merge fields</span> preserved: <span class="file-name">[*hreserve.guestname*]</span>, <span class="file-name">[*hreserve.resnum*]</span>, etc.</li>
+      <li><span class="highlight">Social links</span>: Facebook → facebook.com/LaLanchaLodge/ • Instagram → instagram.com/lalanchavillage/</li>
+      <li><strong>Files for RDP upload:</strong>
+        <span class="file-name">LL_Confirm_Embedded copy.html</span> (Standard) •
+        <span class="file-name">LL_Confirm_OTA_Embedded.html</span> (OTA) •
+        <span class="file-name">LL_Confirm_WH_Embedded.html</span> (Wholesale)
+      </li>
+    </ul>
+  </div>
+  
+</body>
+</html>
